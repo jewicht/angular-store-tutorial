@@ -1,0 +1,21 @@
+<p>trade-builder works!</p>
+<form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
+
+    <div>
+      <label for="name">
+        Name
+      </label>
+      <input id="name" type="text" formControlName="name">
+    </div>
+    
+    <button class="button" type="submit">Add</button>
+  
+  </form>
+    
+
+<div><h3>Number of trades {{ trades.length }}</h3></div>
+
+<div *ngFor="let trade of trades">
+    <h2>{{trade.name}}</h2>
+    <button class="button" (click)="delete(trade)">Delete me</button>
+</div>
